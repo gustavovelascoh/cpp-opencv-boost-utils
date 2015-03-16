@@ -8,7 +8,7 @@ cmake_minimum_required( VERSION 2.8 )
 PROJECT ( get_click_points CXX )
 
 FIND_PACKAGE( OpenCV REQUIRED)
-FIND_PACKAGE( Boost REQUIRED COMPONENTS filesystem system)
+FIND_PACKAGE( Boost REQUIRED COMPONENTS filesystem system program_options)
 
 include_directories(${Boost_INCLUDE_DIRS})
 
@@ -17,4 +17,6 @@ TARGET_LINK_LIBRARIES( bin/get_points_img ${OpenCV_LIBS} ${Boost_LIBRARIES} )
 
 ADD_EXECUTABLE ( bin/get_points_vid get_points_vid.cpp )
 TARGET_LINK_LIBRARIES( bin/get_points_vid ${OpenCV_LIBS} ${Boost_LIBRARIES} )
- 
+
+ADD_EXECUTABLE ( bin/option_parser option_parser.cpp )
+TARGET_LINK_LIBRARIES( bin/option_parser ${Boost_LIBRARIES} ) 
