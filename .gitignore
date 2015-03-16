@@ -1,0 +1,9 @@
+.cproject
+.project
+
+bin/*
+Release/*
+Debug/*
+
+CMakeFiles/*
+Makefile
